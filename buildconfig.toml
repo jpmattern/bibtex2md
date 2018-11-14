@@ -1,0 +1,84 @@
+# the bibtex file to load data from 
+
+bibtexfile = "mypublications.bib"
+
+# the build directory (relative path)
+
+builddir = "build"
+
+# When creating the mini bibtex file for each publication (accessed using the "cite" button)  
+# include the following entries:
+
+citebibtexentries = [ "author", "doi", "journal", "number", "pages", "title", "volume", "year",]
+
+# If url_pdf is not specified for a given publication, use the DOI (if available) to construct
+# url_pdf.
+
+url_pdf_usedoi = false
+
+# Default parameters for each publication. If "selected" or "math" are not specified for a
+# given publication use default values specified here instead.
+
+[defaults]
+  selected = false
+  math = true
+
+# The list of publications to create entries for
+
+[publications]
+  # The name of each publication (here: "ucsc_fda") is used to generate the directory name for
+  # the publication.
+  [publications.ucsc_fda]
+  # A bibtex key needs to be specified for each publication (unless the name of the publication
+  # (here: "ucsc_fda") is also the bibtex key). The bibtex key must match one key in bibtexfile.
+  bibtexkey = "Mattern2018a"
+  # 
+  selected = true
+  abstract = "We present a technique that accurately approximates tangent linear and adjoint models for data assimilation applications using only evaluations of the nonlinear model. The approximation offers a simple way to create tangent linear and adjoint model code that is easily maintainable, as only major changes to the nonlinear model formulation necessitate modifications of the tangent linear or adjoint model code. The approach is particularly well‐suited to marine biogeochemical models and takes advantage of typical features of these types of models to be computationally viable. We illustrate the approximation in a realistic application, using a 3‐dimensional coupled physical‐biogeochemical 4D‐Var data assimilation system, set in the California Current system, in which the approximation is only applied to the 11 state variable biogeochemical model. In this application, the approximation‐based model solution tracks the reference solution accurately over 30 4‐day assimilation cycles but leads to a 3%-15% increase in the computational cost compared to the hand‐coded reference."
+  date = "2018-11-13T00:00:00"
+
+  [publications.ucsc_osaka]
+  bibtexkey = "Irie2018"
+  date = "2018-09-30T00:00:00"
+
+  [publications.ucsc_fpi]
+  bibtexkey = "Mattern2018"
+  selected = true
+  
+#
+# The following might not need to be edited
+#
+
+# Publication type.
+# Legend:
+# 0 = Uncategorized
+# 1 = Conference paper
+# 2 = Journal article
+# 3 = Manuscript
+# 4 = Report
+# 5 = Book
+# 6 = Book section
+
+# The values in publicationtype_mapping provide a mapping from bibtex types (prefaced with a "@")
+# back to the publication types listed above.
+
+[publicationtype_mapping]
+
+article = 2
+book = 5
+conference = 1
+inbook = 6
+incollection = 6
+inproceedings = 1
+techreport = 4
+
+[partials]
+
+header = '''+++
+#
+# created by build_publications.py
+#
+'''
+
+footer = '''+++
+'''
