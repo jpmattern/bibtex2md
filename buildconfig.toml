@@ -32,9 +32,28 @@ url_pdf_usedoi = false
   # A bibtex key needs to be specified for each publication (unless the name of the publication
   # (here: "ucsc_fda") is also the bibtex key). The bibtex key must match one key in bibtexfile.
   bibtexkey = "Mattern2018a"
-  # 
+  # further optional entries may override the information obtained from bibtexfile or can be used 
+  # to specify optional entries like url_preprint etc.
+  # the following optional entries can be used (for formatting help, see examples in 
+  # hugo-academic):
+  #     title 
+  #     date
+  #     authors
+  #     publication_types
+  #     publication (to specify where publication was published, see hugo-academic)
+  #     publication_short
+  #     abstract
+  #     abstract_short
+  #     selected
+  #     projects
+  #     tags
+  #     doi
+  #     url_* (various entries like "url_preprint")
+  #     math
+  #     image (to provide a path to an image that will be copied to used as the featured.jpg or
+  #            featured.png image for the publication)
   selected = true
-  abstract = "We present a technique that accurately approximates tangent linear and adjoint models for data assimilation applications using only evaluations of the nonlinear model. The approximation offers a simple way to create tangent linear and adjoint model code that is easily maintainable, as only major changes to the nonlinear model formulation necessitate modifications of the tangent linear or adjoint model code. The approach is particularly well‐suited to marine biogeochemical models and takes advantage of typical features of these types of models to be computationally viable. We illustrate the approximation in a realistic application, using a 3‐dimensional coupled physical‐biogeochemical 4D‐Var data assimilation system, set in the California Current system, in which the approximation is only applied to the 11 state variable biogeochemical model. In this application, the approximation‐based model solution tracks the reference solution accurately over 30 4‐day assimilation cycles but leads to a 3%-15% increase in the computational cost compared to the hand‐coded reference."
+  abstract = "We present a technique that accurately approximates tangent linear and adjoint models for data assimilation applications using only evaluations of the nonlinear model. The approximation offers a simple way to create tangent linear and adjoint model code that is easily maintainable, as only major changes to the nonlinear model formulation necessitate modifications of the tangent linear or adjoint model code."
   date = "2018-11-13T00:00:00"
 
   [publications.ucsc_osaka]
