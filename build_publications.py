@@ -70,6 +70,12 @@ def build_publications(configfile, bibtexfile=None, verbose=False):
                 continue
             # remove outermost "{}" for value
             bibtexdict[tmp[0].strip()] = tmp[1].strip()[1:-1]
+        
+        if len(bibtexdict) == 1 and 'abstract' in bibtexdict:
+            raise ValueError('''Only the abstract was obtained from "{0}" for the key "{1}".
+Ensure that the abstract contains no closing braces "}}" without opening ones "{{".
+Possible workaround if the error persists: 
+Modify or eliminate abstract from "{0}" and add it to the configuration file "{2}" instead.'''.format(bibtexfile,bibtexkey,configfile))
 
         filename_index = os.path.join(cdir,'index.md')
         filename_cite = os.path.join(cdir,'cite.bib')
