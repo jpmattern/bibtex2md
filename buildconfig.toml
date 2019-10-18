@@ -16,11 +16,11 @@ citebibtexentries = [ "author", "doi", "journal", "number", "pages", "title", "v
 
 url_pdf_usedoi = false
 
-# Default parameters for each publication. If "selected" or "math" are not specified for a
+# Default parameters for each publication. If "featured" or "math" are not specified for a
 # given publication use default values specified here instead.
 
 [defaults]
-  selected = false
+  featured = false
   math = true
 
 # The list of publications to create entries for
@@ -44,7 +44,7 @@ url_pdf_usedoi = false
   #     publication_short
   #     abstract
   #     abstract_short
-  #     selected
+  #     featured
   #     projects
   #     tags
   #     doi
@@ -52,7 +52,7 @@ url_pdf_usedoi = false
   #     math
   #     image (to provide a path to an image that will be copied to used as the featured.jpg or
   #            featured.png image for the publication)
-  selected = true
+  featured = true
   abstract = "We present a technique that accurately approximates tangent linear and adjoint models for data assimilation applications using only evaluations of the nonlinear model. The approximation offers a simple way to create tangent linear and adjoint model code that is easily maintainable, as only major changes to the nonlinear model formulation necessitate modifications of the tangent linear or adjoint model code."
   date = "2018-11-13T00:00:00"
 
@@ -62,7 +62,7 @@ url_pdf_usedoi = false
 
   [publications.ucsc_fpi]
   bibtexkey = "Mattern2018"
-  selected = true
+  featured = true
   
 #
 # The following might not need to be edited

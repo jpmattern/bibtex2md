@@ -165,12 +165,12 @@ Modify or eliminate abstract from "{0}" and add it to the configuration file "{2
             if 'abstract_short' in publications[pubkey]:
                 f.write('abstract_short = "{}"\n'.format(publications[pubkey]['abstract_short']))
 
-            # selected
-            if 'selected' in publications[pubkey]:
-                selected = publications[pubkey]['selected']
+            # featured
+            if 'featured' in publications[pubkey]:
+                featured = publications[pubkey]['featured']
             else:
-                selected = defaults['selected']
-            f.write('selected = {}\n'.format({True:'true',False:'false'}[selected]))
+                featured = defaults['featured']
+            f.write('featured = {}\n'.format({True:'true',False:'false'}[featured]))
             
             # projects
             if 'projects' in publications[pubkey]:
