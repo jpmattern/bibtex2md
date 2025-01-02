@@ -32,7 +32,7 @@ def parse_bibtex_entry(bibtexfile, bibtexkey, firstnamefirst=True, typekey='type
     '''
     with open(bibtexfile) as f:
         # (?:...)  Non-grouping version of regular parentheses.
-        pattern = '^@(?P<type>[a-z]+) *{ *'+bibtexkey+'(?P<options>(?: *,\s*\w+ * = *{(?:{[^}]+}|[^{}]+)+})+)'
+        pattern = r'^@(?P<type>[a-z]+) *{ *' + bibtexkey + r'(?P<options>(?: *,\s*\w+ * = *{(?:{[^}]+}|[^{}]+)+})+)'
         match_bib = re.search(pattern, f.read(), flags=re.MULTILINE)
     if match_bib is None:
         raise KeyError('Cannot find bibtex entry with key "{}" in "{}".'.format(bibtexkey, bibtexfile))
@@ -126,7 +126,7 @@ def build_publications(configfile, bibtexfile=None, verbose=False):
             print(' - building entries for publication "{}" (bibtex key: "{}")'.format(pubkey, bibtexkey))
 
         if verbose:
-            print('   parsing information from bibtex file')
+            print('   parsing information from bibtex file ("{}")'.format(bibtexfile))
 
         bibtexdict = parse_bibtex_entry(bibtexfile, bibtexkey)
         if len(bibtexdict) == 1 and 'abstract' in bibtexdict:
@@ -200,7 +200,7 @@ Modify or eliminate abstract from "{0}" and add it to the configuration file "{2
             abstract = bibtexdict['abstract'].replace('"', '\\"')
         else:
             raise ValueError('Cannot find "abstract" information for "{}" ({}).'.format(pubkey, bibtexkey))
-        entry['abstract'] = abstract.replace('{\%}', '%')
+        entry['abstract'] = abstract.replace(r'{\%}', '%')
 
         if 'abstract_short' in publications[pubkey]:
             entry['abstract_short'] = publications[pubkey]['abstract_short']
